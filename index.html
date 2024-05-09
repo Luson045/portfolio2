@@ -1,0 +1,68 @@
+<!--There are four pages
+1)index.html the main page
+2)about.html the about page
+3)projects.html the project page
+4)certificates.html the certificate page
+each have a different css file as I made them separately and used some common namings
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Portfolio</title>
+</head>
+<body>
+  <!--This section is used to create the light effect-->
+  <button onclick="light_control()" id="switch">
+  </button>
+  <div id="lightscreen"> 
+    <div id="prompt"><p id="hint">Isn't it too dark? Turn ON the light using the switch on top-left corner</p></div>
+  </div>
+  <!---->
+  <!--this is the code for the main portfolio-->
+  <div id="main">
+    <h2>[HELLO THIS IS LUSON]</h2>
+    <p style="background-color:rgb(33, 250, 112); border-radius: 10px;box-shadow: 5px 5px rgb(2, 152, 47);">HEY THERE! WELCOME TO MY PORTFOLIO, I AM LUSON BASUMATARY, A DATA SCIENCE FRESHMAN AT NIT JALANDHAR.CHOOSE A DOOR TO VISIT THE MENTIONED SECTION</p>
+    <!--making the doors using flexbox-->
+    <div class="items">
+      <div class="item" id="door1">
+        <p class="links">ABOUT ME</p>
+        <a href="about.html"><img src="images/door.png"></a>
+      </div>
+      <div class="item" id="door2">
+        <p class="links">PROJECT GALLERY</p>
+        <a href="projects.html"><img src="images/door.png"></a>
+      </div>
+      <div class="item" id="door3">
+        <p class="links">CERTIFICATE GALLERY</p>
+        <a href="certificates.html"><img src="images/door.png"></a>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <!---->
+<script>
+  light="off"
+  function light_control(){
+    if (light==="on"){
+      light="off";
+      document.getElementById("prompt").style.color="white";
+      document.getElementById("switch").style.backgroundColor="white";
+      document.getElementById("hint").innerHTML="Turn ON the light using the switch on top-left corner";
+      document.getElementById("lightscreen").style.display="block";
+      document.getElementById("main").style.display="none";
+    }else{
+      light="on";
+      document.getElementById("prompt").style.color="black";
+      document.getElementById("switch").style.backgroundColor="gray";
+      document.getElementById("lightscreen").style.display="none";
+      document.getElementById("main").style.display="block";
+
+    }
+  }
+</script>
+</body>
+</html>
